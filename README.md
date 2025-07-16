@@ -11,59 +11,40 @@ This project analyzes sales data from a fictional U.S.-based Superstore to uncov
 
 **Key questions addressed:**
 
-- 📍 Which region generated the most sales?  
-- 🧾 What are the top-selling products?  
-- 🗓️ How do sales vary month-to-month?  
-- 💼 Which categories and segments are most profitable?
+- Which region generated the most sales?  
+- What are the top-selling products?  
+- How do sales vary month-to-month?  
+- Which categories and segments are most profitable?
 
 ---
 
 ## 🧰 Tools & Technologies
 
-- **Python** (Pandas, sqlite3, Matplotlib)  
-- **SQLite** (via DB Browser for SQLite)  
-- **Jupyter Notebook**  
-- **Excel**  
-- **SQL**
+- Python (Pandas, sqlite3, Matplotlib)  
+- SQLite (via DB Browser for SQLite)  
+- Jupyter Notebook  
+- Excel  
+- SQL
 
 ---
 
 ## 🔍 Key Insights
 
-- 🏆 The **West** region generated the highest total sales.  
-- 💡 **Technology** was the most profitable category.  
-- 🗓️ Sales consistently peaked in **Q4 (November–December)**.  
-- 📦 Sub-categories like **Phones** and **Chairs** were top revenue generators.
+- The **West** region generated the highest total sales  
+- **Technology** was the most profitable category  
+- Sales consistently peaked in **Q4 (November–December)**  
+- Sub-categories like **Phones** and **Chairs** were top revenue generators
 
 ---
 
-## 🧠 SQL Query Samples
-
-```sql
--- Total sales by region
-SELECT Region, SUM(Sales) AS Total_Sales 
-FROM sales 
-GROUP BY Region;
-
--- Top 5 products by sales
-SELECT [Product Name], SUM(Sales) AS Product_Sales 
-FROM sales 
-GROUP BY [Product Name] 
-ORDER BY Product_Sales DESC 
-LIMIT 5;
-
--- Monthly sales trend
-SELECT substr([Order Date], 1, 7) AS Month, SUM(Sales) AS Monthly_Sales 
-FROM sales 
-GROUP BY Month 
-ORDER BY Month;
-
 ## 📊 Visualizations
 
-- 📈 **Sales by Region** (Bar Chart)  
-- 📉 **Monthly Sales Trend** (Line Chart)  
-- 🏷️ **Profit by Category** (Bar Chart)  
-- 📋 **Top 5 Selling Products** (Table / Bar Chart)
+Visualizations created from the analysis include:
+
+- Sales by Region (Bar Chart)  
+- Monthly Sales Trend (Line Chart)  
+- Profit by Category (Bar Chart)  
+- Top 5 Selling Products (Table / Bar Chart)
 
 ---
 
@@ -80,16 +61,14 @@ ORDER BY Month;
 
 - **Source**: [Kaggle - Superstore Dataset](https://www.kaggle.com/datasets/juhi1994/superstore)  
 - **Format**: CSV → Converted to SQLite  
-
-**Fields include:**
-
-- Order Date  
-- Region  
-- Category  
-- Product Name  
-- Sales  
-- Profit  
-- Customer Segment
+- **Fields include:**
+  - Order Date  
+  - Region  
+  - Category  
+  - Product Name  
+  - Sales  
+  - Profit  
+  - Customer Segment
 
 ---
 
@@ -97,9 +76,9 @@ ORDER BY Month;
 
 - Connecting Python to SQL databases using `sqlite3`  
 - Writing efficient SQL queries to extract business metrics  
-- Analyzing and processing SQL results using **Pandas**  
-- Creating impactful visualizations using **Matplotlib**  
-- Structuring a complete data analysis project for portfolio and GitHub
+- Analyzing and processing SQL results using Pandas  
+- Creating impactful visualizations using Matplotlib  
+- Structuring a complete data analysis project for GitHub
 
 ---
 
@@ -117,6 +96,36 @@ BSc IT | Data Science Enthusiast
 
 If you found this project helpful:
 
-- 🌟 **Star** the repository  
-- 🍴 **Fork** and customize your version  
-- 💬 **Share** your feedback or suggestions via [Issues](../../issues)
+- ⭐ Star the repository  
+- 🍴 Fork and customize your version  
+- 💬 Share your feedback or suggestions via [Issues](../../issues)
+
+---
+
+## 📄 SQL Query Samples
+
+```sql
+-- Total sales by region
+SELECT Region, SUM(Sales) AS Total_Sales 
+FROM sales 
+GROUP BY Region;
+-- Top 5 products by sales
+SELECT [Product Name], SUM(Sales) AS Product_Sales 
+FROM sales 
+GROUP BY [Product Name] 
+ORDER BY Product_Sales DESC 
+LIMIT 5;
+
+-- Top 5 products by sales
+SELECT [Product Name], SUM(Sales) AS Product_Sales 
+FROM sales 
+GROUP BY [Product Name] 
+ORDER BY Product_Sales DESC 
+LIMIT 5;
+
+-- Monthly sales trend
+SELECT substr([Order Date], 1, 7) AS Month, SUM(Sales) AS Monthly_Sales 
+FROM sales 
+GROUP BY Month 
+ORDER BY Month;
+
